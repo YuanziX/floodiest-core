@@ -15,19 +15,11 @@ class UserOut(BaseModel):
         orm_mode = True
 
 class AddressCreate(BaseModel):
-    street: str
-    city: str
-    state: str
-    zip_code: str
     latitude: float
     longitude: float
 
 class AddressOut(BaseModel):
     id: int
-    street: str
-    city: str
-    state: str
-    zip_code: str
     latitude: float
     longitude: float
 
