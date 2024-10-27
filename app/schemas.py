@@ -19,6 +19,8 @@ class AddressCreate(BaseModel):
     city: str
     state: str
     zip_code: str
+    latitude: float
+    longitude: float
 
 class AddressOut(BaseModel):
     id: int
@@ -26,6 +28,8 @@ class AddressOut(BaseModel):
     city: str
     state: str
     zip_code: str
+    latitude: float
+    longitude: float
 
     class Config:
         orm_mode = True

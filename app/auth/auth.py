@@ -6,7 +6,7 @@ from app.database import SessionLocal
 
 SECRET_KEY = "hehe_my_secret"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+ACCESS_TOKEN_EXPIRE_MINUTES = 30 * 30
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Float, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from app.database import Base
 
@@ -20,6 +20,8 @@ class Address(Base):
     city = Column(String)
     state = Column(String)
     zip_code = Column(String)
+    latitude = Column(Float)
+    longitude = Column(Float)
     user_id = Column(Integer, ForeignKey("users.id"))
 
     owner = relationship("User", back_populates="addresses")
