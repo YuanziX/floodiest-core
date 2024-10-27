@@ -14,6 +14,7 @@ def register_user(user: Dict[str, str], db: Session = Depends(get_db)):
     username = user.get("username")
     email = user.get("email")
     password = user.get("password")
+    fcm_token = "1223456"
 
     if not username or not email or not password:
         raise HTTPException(status_code=400, detail="Missing fields")
@@ -22,7 +23,7 @@ def register_user(user: Dict[str, str], db: Session = Depends(get_db)):
     if db_user:
         raise HTTPException(status_code=400, detail="Username already registered")
 
-    return create_user(db, username, email, password)
+    return create_user(db, username, email, password, fcm_token)
 
 @router.post("/token")
 def login_for_access_token(form_data: Dict[str, str], db: Session = Depends(get_db)):
