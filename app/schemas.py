@@ -5,6 +5,7 @@ class UserCreate(BaseModel):
     username: str
     email: str
     password: str
+    fcm_token: str
 
 class UserOut(BaseModel):
     id: int

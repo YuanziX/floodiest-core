@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Float, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from app.database import Base
+from app.base import Base
 
 class User(Base):
     __tablename__ = "users"
@@ -9,6 +9,7 @@ class User(Base):
     username = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
     hashed_password = Column(String)
+    fcm_token = Column(String)
 
     addresses = relationship("Address", back_populates="owner")
 

@@ -1,8 +1,6 @@
 from passlib.context import CryptContext
 from datetime import datetime, timedelta
 from jose import jwt
-from app.models import User
-from app.database import SessionLocal
 
 SECRET_KEY = "hehe_my_secret"
 ALGORITHM = "HS256"

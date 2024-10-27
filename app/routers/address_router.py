@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from app.schemas import AddressCreate, AddressOut
-from app.database import get_db
+from app.base import get_db
 from app.services.address_service import create_address
 from app.auth.dependencies import get_current_user
 
